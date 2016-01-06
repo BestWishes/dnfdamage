@@ -40,7 +40,7 @@ public class Damage extends HttpServlet {
 		//职业（百分比、固伤）
 		String zhiye=request.getParameter("zhiye");
 		
-		//属�?强化
+		//属�?强化
 		Double oldshuxin=Double.valueOf(request.getParameter("oldshuxin"));
 		//附加伤害
 		Double oldfujia=Double.valueOf(request.getParameter("oldfujia"))/100.0;
@@ -48,9 +48,9 @@ public class Damage extends HttpServlet {
 		Double oldzengjia=Double.valueOf(request.getParameter("oldzengjia"))/100.0;
 		//增加暴击伤害
 		Double oldbaoji=Double.valueOf(request.getParameter("oldbaoji"))/100.0;
-		//暴击�?
+		//暴击�?
 		Double oldbaojilv=Double.valueOf(request.getParameter("oldbaojilv"))/100.0;
-		//怪物属�?抗�?
+		//怪物属�?抗�?
 		Double oldkangxing=Double.valueOf(request.getParameter("oldkangxing"));
 		//怪物减伤
 		Double oldjianshang=Double.valueOf(request.getParameter("oldjianshang"))/100.0;
@@ -128,7 +128,7 @@ public class Damage extends HttpServlet {
 		//职业（百分比、固伤）
 		String zhiye=request.getParameter("zhiye");
 		
-		//属�?强化
+		//属�?强化
 		Double oldshuxin=Double.valueOf(request.getParameter("oldshuxin"));
 		//附加伤害
 		Double oldfujia=Double.valueOf(request.getParameter("oldfujia"))/100.0;
@@ -136,9 +136,9 @@ public class Damage extends HttpServlet {
 		Double oldzengjia=Double.valueOf(request.getParameter("oldzengjia"))/100.0;
 		//增加暴击伤害
 		Double oldbaoji=Double.valueOf(request.getParameter("oldbaoji"))/100.0;
-		//暴击�?
+		//暴击�?
 		Double oldbaojilv=Double.valueOf(request.getParameter("oldbaojilv"))/100.0;
-		//怪物属�?抗�?
+		//怪物属�?抗�?
 		Double oldkangxing=Double.valueOf(request.getParameter("oldkangxing"));
 		//怪物减伤
 		Double oldjianshang=Double.valueOf(request.getParameter("oldjianshang"))/100.0;

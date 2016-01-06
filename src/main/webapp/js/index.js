@@ -1,7 +1,25 @@
-$(document).ready(function() {
-	$("#duliform").hide();
-
+function getfileList(){
+	var target=$("#fileListDiv");
+	$.post("FileList",null,function(data){
+		if(data=="文件为空，请先上传文件"){
+			$.messager.alert("提示",data);
+		}
+		else{
+			var files=eval(data);
+			for(var i=0;i<files.length;i++){
+				target.append("<a href='downFile?filename="+files[i]+"' >"+files[i]+"</a><br>");
+		}
+		
+		}
+	},"json")
 	
+}
+
+$(document).ready(function() {
+	getfileList();
+	
+	
+	$("#duliform").hide();
 	$("#zhiyexuanzhe").combobox({
 		onSelect : function() {
 			if ($("#zhiyexuanzhe").combobox("getValue") == "baifenbizhiye") {
@@ -572,5 +590,27 @@ $(document).ready(function() {
 			
 		}
 	});
-	
+	$("#saveAction").click(function(){
+//		if($("#baifenbiform").form("validate")&&($("#zhiyexuanzhe").combobox("getValue")=="baifenbizhiye")){
+//			var params=$("#baifenbiform").serialize();
+//			$.post("saveAction",params,function(data){
+//				$.messager.alert(data);
+//			});
+//		}else if($("#duliform").form("validate")&&($("#zhiyexuanzhe").combobox("getValue")=="dulizhiye")){
+//			
+//		}else{
+//			$.messager.alert("提示","请填写完整数据","info");
+//			return false;
+//		}
+		
+		window.location.href="file_upload";
+//		if($("#savefb").filebox("getValue")!=undefined&&$("#savefb").filebox("getValue")!=""){
+//			$.messager.alert("提示",$("#savefb").filebox("getValue"));
+//		}
+	})
+	$("#savefb").filebox({
+		buttonText:"选择文件",
+//		buttonIcon:"down",
+		buttonAlign:"right"
+	})
 })

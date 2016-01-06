@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/comm/esayui/themes/icon.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/comm/esayui/demo.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/comm/esayui/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/comm/esayui/jquery.validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/comm/esayui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 <title>DNF 伤害值计算</title>
@@ -19,7 +20,7 @@
 			<option value="dulizhiye">固伤职业</option>
 		</select>
 	</div>
-	<form id="baifenbiform" method="get" action="Damage">
+	<form id="baifenbiform" name="baifenbiform"  method="get" action="Damage" >
 		<div align="center">
 			<table>
 				<tr>
@@ -98,7 +99,7 @@
 			<td> <img id='imgresult' width="20px" height="20px" alt="a" src="${pageContext.request.contextPath}/image/equals.png" > </td>
 		</div>
 	</form>
-	<form id="duliform" method="post" action="Damage">
+	<form id="duliform" name="duliform" method="post" action="Damage">
 		<div align="center">
 			<table>
 				<tr>
@@ -177,10 +178,28 @@
 		</div>
 	</form>
 	<div align="center">
+		<form action="saveAction" enctype="multipart/form-data" method="post">
+			<table>
+				<tr>
+					<td>
+					文件名:<input id="savefb" name="savafb" class="easyui-filebox" style="width:300px"/><a id="saveAction" href="javaScript:void(0)">保存到服务器</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					文件名:<input id="downfb" name="downfb" class="easyui-filebox" style="width:300px"/><a id="downAction" href="javaScript:void(0)">下载保存的记录</a>
+					</td>
+				</tr>
+			</table>
+			<button class="easyui-button" type="submit">提交</button>
+		</form>
+	</div>
+	<div id="fileListDiv" align="center">
+		
+	</div>
+	<div align="center">
 		<a href="http://www.miitbeian.gov.cn/">蜀ICP备15036081号</a>
 	</div>
-	<div>
-		<a id="testAction">test</a>
-	</div>
+
 </body>
 </html>

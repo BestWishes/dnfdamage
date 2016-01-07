@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>dnf</groupId>
-  <artifactId>dnfdamage</artifactId>
+  <groupId>BestWishes</groupId>
+  <artifactId>LoveWord</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>dnfdamage Maven Webapp</name>
+  <name>LoveWord Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
+    <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -83,11 +83,10 @@
 	<groupId>com.google.zxing</groupId>
 		<artifactId>javase</artifactId>
 		<version>3.2.1</version>
-	</dependency>
-	
+	</dependency>	
 	</dependencies>
+
   <build>
-  
-    <finalName>dnfdamage</finalName>
+    <finalName>LoveWord</finalName>
   </build>
 </project>

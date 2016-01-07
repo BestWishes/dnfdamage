@@ -1,11 +1,17 @@
 package file;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,6 +25,9 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.ProgressListener;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import bitmatrix.BarCodeFactory;
+import entity.FilesForDownLoad;
 
 /**
  * Servlet implementation class FileUpload
@@ -111,7 +120,25 @@ public class FileUpload extends HttpServlet {
 		}
 		
 		String[] downloadFiles=files.list(); 
-		request.setAttribute("files", downloadFiles);
+		List<FilesForDownLoad> filesForDownLoads=new ArrayList<FilesForDownLoad>();
+
+		for (String string : downloadFiles) {
+			FilesForDownLoad filesForDownLoad=new FilesForDownLoad();
+			filesForDownLoad.setFileName(string);
+			try {
+//				BufferedImage bufferedImage=BarCodeFactory.createBarCode();
+//				filesForDownLoad.setImage(bufferedImage);
+//				filesForDownLoad.setGraphics2d(bufferedImage.createGraphics());
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			filesForDownLoads.add(filesForDownLoad);
+			
+		}
+		
+		request.setAttribute("files", filesForDownLoads);
 		RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/file_download.jsp");
 		dispatcher.forward(request, response);
 	}
